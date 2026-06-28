@@ -1,79 +1,46 @@
-# Stochastic Diffusion Search for Skin Cancer Detection
+# Stochastic Diffusion Search for Skin Lesion Localisation
 
 ## Overview
 
-This mini project explores the use of Stochastic Diffusion Search (SDS), a swarm intelligence algorithm, for detecting skin cancer from image data. The goal is to identify regions of potential malignancy by leveraging distributed agent-based search and partial hypothesis evaluation.
+This project explores the use of **Stochastic Diffusion Search (SDS)**, a swarm intelligence algorithm, for skin-lesion localisation in image data.
 
-Skin cancer detection is a challenging task due to high-dimensional image features, variability in lesion appearance, and differences in lighting conditions. This mini project investigates how SDS can efficiently navigate such complex search spaces.
+The project was completed as part of the **Natural Computing** module and applies a natural computing technique to a real-world-inspired medical imaging problem.
 
----
-
-## Dataset
-
-This mini project is based on image data representing skin lesions, where features such as intensity and spatial patterns are used to detect abnormal regions.
-
----
+SDS is used to demonstrate how a population of agents can explore an image search space, perform partial evaluations, and gradually cluster around potentially suspicious regions.
 
 ## Methodology
 
-### Stochastic Diffusion Search (SDS)
+The SDS process is divided into two main phases:
 
-SDS is a population-based search algorithm where:
+1. **Test Phase**  
+   Each agent evaluates a small local region of the image and becomes active if the region appears promising.
 
-* Each agent represents a hypothesis
-* Agents perform partial evaluations (micro-tests)
-* Agents are classified as active or inactive based on test outcomes
+2. **Diffusion Phase**  
+   Inactive agents either adopt the hypothesis of an active agent or generate a new random hypothesis.
 
-### Algorithm Process
+Over repeated iterations, active agents concentrate around stronger candidate regions.
 
-1. Test Phase
 
-   * Agents evaluate their hypotheses using a partial, randomized test
-   * Successful agents become active
+## Repository Structure
 
-2. Diffusion Phase
+```text
+.
+├── code/
+│   ├── SDS_main.py
+│   ├── SDS sphere evaluation.py
+│   ├── sds_sphere_per_agent_final.csv
+│   ├── sds_sphere_summary.txt
+│   └── skin_example.jpg
+├── report/
+│   └── sds-skin-cancer-report.pdf
+├── LICENSE
+└── README.md
+```
+## Academic Context
 
-   * Inactive agents interact with others:
+This mini project was completed for the **COMP1805 Natural Computing** module. The coursework focused on applying natural computing or swarm intelligence techniques to a selected problem and critically reflecting on their strengths, limitations, and real-world applicability.
 
-     * If they encounter an active agent, they adopt its hypothesis
-     * Otherwise, they generate a new random hypothesis
+## Notes
 
-This iterative process allows promising solutions to propagate while maintaining exploration.
+The weekly wiki reflections are included as supporting learning material. They document my understanding of topics such as the No Free Lunch theorem, Dispersive Flies Optimisation, Genetic Algorithms, and Stochastic Diffusion Search.
 
----
-
-## Application
-
-* Agents are deployed across image regions
-* Each agent represents a candidate region of interest
-* Partial evaluation samples image characteristics (e.g., intensity)
-* Clusters of active agents indicate likely areas of abnormality
-
----
-
-## Results and Discussion
-
-* SDS demonstrates efficient exploration of complex, high-dimensional spaces
-* The algorithm converges toward promising regions through agent clustering
-* Effective in noisy environments
-* Limitations include:
-
-  * Dependence on well-designed partial evaluation functions
-  * Sensitivity to hypothesis representation
-
----
-
-## Future Work
-
-* Improve image preprocessing and feature extraction
-* Combine SDS with classifiers (e.g., SVM or deep learning models)
-* Explore hybrid swarm intelligence approaches
-* Optimize SDS parameters for medical imaging tasks
-
----
-
-## Technologies Used
-
-* Python
-* Image processing techniques
-* Swarm intelligence algorithms
