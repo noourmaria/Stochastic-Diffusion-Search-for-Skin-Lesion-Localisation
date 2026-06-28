@@ -36,9 +36,6 @@ Over repeated iterations, active agents concentrate around stronger candidate re
 ├── LICENSE
 └── README.md
 ```
-## Academic Context
-
-This mini project was completed for the **COMP1805 Natural Computing** module. The coursework focused on applying natural computing or swarm intelligence techniques to a selected problem and critically reflecting on their strengths, limitations, and real-world applicability.
 
 ## Notes
 
