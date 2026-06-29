@@ -26,13 +26,15 @@ Over repeated iterations, active agents concentrate around stronger candidate re
 ```text
 .
 ├── code/
-│   ├── SDS_main.py
+│   ├── SDS main.py
 │   ├── SDS sphere evaluation.py
 │   ├── sds_sphere_per_agent_final.csv
 │   ├── sds_sphere_summary.txt
 │   └── skin_example.jpg
 ├── report/
 │   └── sds-skin-cancer-report.pdf
+├── wiki/
+│   └── Weekly Wiki Entries.pdf
 ├── LICENSE
 └── README.md
 ```
